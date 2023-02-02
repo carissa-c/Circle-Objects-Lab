@@ -3,17 +3,37 @@
 
 Console.WriteLine("Welcome to the Circle Tester!");
 
+List<Circle> allCircles = new List<Circle>();
 bool runProgram = true;
-//bool response = true;
 while (runProgram)
 {
+    double input = Validator.GetNumberInRange(0);
+
     Console.WriteLine("Enter a radius:");
+    //double input = -1;
+    //while(input <= 0)
+    //while (double.TryParse(Console.ReadLine(), out input) == false)
+    //{
+    //console.WriteLine("That was invalid.Try again");
+    //}
+    //if(input <= 0)
+    //{
+    //Console.WriteLine("Value is too low.Try again."
+    //}
+    //}
+
+    //Create circle object
+    //CircleObj myCircle = new CircleObj(input);
+    //Console.WriteLine($"Circumfrence: {myCircle.CalculateFormattedCircumference()}");
+    //Console.WriteLine($Area: {myCircle.CalculatedFormattedArea()}");
+
     double userInput = double.Parse(Console.ReadLine());
     int numOfTries = 1;
 
     if (userInput > 0)
     {
         Circle myCircle = new Circle(userInput);
+        allCircles.Add(myCircle);
         Console.WriteLine(myCircle.CalculateFormattedCircumference());
         Console.WriteLine(myCircle.CalculateFormattedArea());
     }
@@ -33,14 +53,22 @@ while (runProgram)
     {
         runProgram = false;
         Console.WriteLine($"Goodbye! You created {numOfTries} Circle Object(s)");
-
-        //foreach (Circle c in myCircle.Where()
-        //{
-        //    Console.WriteLine($"Goodbye! You created {c} Circle Object(s)");
-        //}
     }
-    Console.ReadLine();
 }
 
 
 
+//------------------------------------
+//Track how many times a user input
+
+//List<CircleObj> allCircles = new List<CircleObj>();
+//outside of code
+
+
+//below code
+//Console.WriteLine($"You created {allCircles.Count} circles.");
+
+//foreach (CircleObj c in allCircles)
+//{
+//    Console.WriteLine($"Radius: {c.Radius} Area: {c.CalculateFormattedArea()} Circumference {c.CalculateFormattedCircumference()}");
+//}

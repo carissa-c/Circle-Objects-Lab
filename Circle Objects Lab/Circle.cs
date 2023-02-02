@@ -19,17 +19,20 @@ namespace Circle_Objects_Lab
         {
             double circleCircumference = 2 * Radius * Math.PI;
             return circleCircumference;
+            //1 line: return 2 * Math.PI * Radius;
         }
         //c.
         public string CalculateFormattedCircumference()
         {
             return $"Circumference: {FormatNumber(CalculateCircumference())}";
+            //return FormatNumber(CalculateCircumference());
         }
         //d.
         public double CalculateArea()
         {
             double calculatedArea = Math.PI * (Radius * Radius);
             return calculatedArea;
+            //return Math.Pi * Math.Pow(Radius,2)
         }
         //e.
         public string CalculateFormattedArea()
@@ -37,7 +40,7 @@ namespace Circle_Objects_Lab
            return $"Area: {FormatNumber(CalculateArea())}";
         }
         //f.
-        public string FormatNumber(double x)
+        private string FormatNumber(double x)
         {
             return Math.Round(x, 2).ToString();
         }
